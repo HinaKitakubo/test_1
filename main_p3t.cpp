@@ -668,21 +668,25 @@ int main(int argc, char *argv[])
                PS::F64vec pos = system_grav[i].pos;
                PS::F64vec vel = system_grav[i].vel;
 
+/*
                std::cout << "ID : " << i << std::endl;
                std::cout << "■x, y, z = " << pos.x << ", " << pos.y << ", " << pos.z << std::endl;
                std::cout << "■vx, vy, vz = " << vel.x << ", " << vel.y << ", " << vel.z << std::endl << std::endl;
+*/
 
                kin_e_before = 0.5*(system_grav[i].mass)*(vel*vel);               //運動エネルギーを求める
                pot_e_before = -(1.0 * system_grav[i].mass * FPGrav::m_sun)/(sqrt(pos*pos));    //中心BHのポテンシャルエネルギーを求める
 
+/*
                std::cout << "●kinematic energy = " << kin_e_before << std::endl;  //各粒子の運動エネルギー
                std::cout << "●potential energy = " << pot_e_before << std::endl << std::endl;  //各粒子の中心BHのポテンシャルエネルギー
-
+*/
                kin_e += kin_e_before;
                pot_e += pot_e_before;
                }
              }
 
+/*
                std::cout << "▲total_kinematic energy = " << kin_e << std::endl;   //全粒子の運動エネルギーの合計
                std::cout << "▲total_potental energy = " << pot_e << std::endl;    //全粒子の中心BHのポテンシャルエネルギーの合計
                
@@ -691,6 +695,7 @@ int main(int argc, char *argv[])
                //std::cout << "▲total_(kine + pot) = " << kin_e + pot_e << std::endl << std::endl;  //粒子1つにおける全エネルギーの出力
 
                std::cout << "▲▲▲total energy = " << e_now.etot << std::endl << std::endl;
+*/
              //}
          //}
 
